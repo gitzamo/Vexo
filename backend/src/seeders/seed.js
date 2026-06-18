@@ -25,12 +25,11 @@ const seed = async () => {
       where: { email: 'admin@sportspartner.app' },
       defaults: {
         name: 'Platform Admin',
-        password_hash: 'ChangeMe123!', // hashed automatically by model hook
+        password_hash: 'ChangeMe123!',
         role: 'admin',
       },
     });
 
-    // Ensure admin has correct role
     if (admin.role !== 'admin') {
       admin.role = 'admin';
       await admin.save();
