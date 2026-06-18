@@ -16,6 +16,17 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Sports Partner Finder API is running.' });
 });
 
+const seed = require('./seeders/runSeed');
+
+app.post('/api/admin/seed', async (req, res) => {
+  try {
+    const result = await seed();
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/games', gameRoutes);
