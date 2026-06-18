@@ -17,7 +17,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Seed route BEFORE admin routes so it doesn't get caught by admin router
-app.post('/api/admin/seed', async (req, res) => {
+app.post('/api/seed', async (req, res) => {
   try {
     const { Game, User } = require('./models');
     
