@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Modern vibrant sports app theme with energy and clarity */
+    --background: 0 0% 98%;          /* #FAFAFA clean white */
+    --foreground: 220 13% 12%;       /* #151A2D dark navy */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 12%;
+
+    --primary: 260 95% 56%;          /* #6B21FF vibrant purple */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 84% 60%;          /* #EE5A52 energetic coral-red */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 13% 90%;            /* #E5E7EB cool neutral */
+    --muted-foreground: 220 8% 52%;
+
+    --accent: 47 95% 50%;            /* #FFBA00 vibrant golden */
+    --accent-foreground: 220 13% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;          /* #10B981 fresh green */
+    --success-foreground: 0 0% 100%;
+
+    --indoor: 260 95% 56%;           /* purple for indoor games */
+    --outdoor: 0 84% 60%;            /* coral-red for outdoor games */
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 260 95% 56%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 999px;
+  }
+}
