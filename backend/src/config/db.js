@@ -3,22 +3,21 @@ const { Sequelize } = require('sequelize');
 let sequelize;
 
 if (process.env.DATABASE_URL) {
-  // Production mode (Render uses DATABASE_URL)
   sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
-    logging: process.env.NODE_ENV === 'development' ? console.log : false,
+    logging: false,
     define: {
       underscored: true,
       timestamps: true,
     },
     dialectOptions: {
-      ssl: process.env.NODE_ENV === 'production' 
-        ? { require: true, rejectUnauthorized: false } 
-        : false,
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
     },
   });
 } else {
-  // Development mode (local with individual env vars)
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
@@ -27,7 +26,7 @@ if (process.env.DATABASE_URL) {
       host: process.env.DB_HOST || 'localhost',
       port: process.env.DB_PORT || 5432,
       dialect: 'postgres',
-      logging: process.env.NODE_ENV === 'development' ? console.log : false,
+      logging: false,
       define: {
         underscored: true,
         timestamps: true,
