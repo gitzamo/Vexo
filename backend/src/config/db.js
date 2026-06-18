@@ -1,5 +1,6 @@
 const { Sequelize } = require('sequelize');
-
+console.log('DATABASE_URL exists:', !!process.env.DATABASE_URL);
+console.log('NODE_ENV:', process.env.NODE_ENV);
 let sequelize;
 
 if (process.env.DATABASE_URL) {
