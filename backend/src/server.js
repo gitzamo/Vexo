@@ -1,4 +1,4 @@
-require('dotenv').config();
+const { Sequelize } = require('sequelize');
 const app = require('./app');
 const { connectDB } = require('./config/db');
 const { sequelize } = require('./models');
