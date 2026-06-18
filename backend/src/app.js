@@ -16,8 +16,7 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Vexo API is running.' });
 });
 
-// Seed route BEFORE admin routes so it doesn't get caught by admin router
-app.post('/api/seed', async (req, res) => {
+app.get('/api/seed-now', async (req, res) => {
   try {
     const { Game, User } = require('./models');
     
@@ -50,7 +49,7 @@ app.post('/api/seed', async (req, res) => {
       await admin.save();
     }
 
-    res.json({ success: true, message: 'Seeding complete' });
+    res.json({ success: true, message: 'Database seeded successfully' });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
