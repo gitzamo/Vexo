@@ -38,15 +38,22 @@ export default function AppShell() {
     navigate('/login');
   };
 
+  const handleLogoClick = () => {
+    navigate('/discover');
+  };
+
   return (
     <div className="flex min-h-screen bg-background">
       <aside className="hidden md:flex w-64 shrink-0 flex-col border-r border-border bg-card shadow-sm">
-        <a href="/discover" className="flex items-center gap-2 px-6 py-6 hover:opacity-80 transition-opacity">
+        <button
+          onClick={handleLogoClick}
+          className="flex items-center gap-2 px-6 py-6 hover:opacity-80 transition-opacity cursor-pointer bg-transparent border-none"
+        >
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md">
             <Trophy className="h-5 w-5" />
           </div>
           <span className="font-display text-xl font-bold tracking-tight">Vexo</span>
-        </a>
+        </button>
 
         <nav className="flex-1 space-y-1 px-4 py-4">
           {navItems.map(({ to, label, icon: Icon }) => (
@@ -102,12 +109,15 @@ export default function AppShell() {
       </aside>
 
       <div className="flex md:hidden fixed top-0 inset-x-0 z-40 items-center justify-between border-b border-border bg-card px-4 py-4 shadow-sm">
-        <a href="/discover" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <button
+          onClick={handleLogoClick}
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer bg-transparent border-none"
+        >
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Trophy className="h-4 w-4" />
           </div>
           <span className="font-display text-lg font-bold">Vexo</span>
-        </a>
+        </button>
         <button onClick={handleLogout} className="text-muted-foreground hover:text-foreground transition-colors">
           <LogOut className="h-4 w-4" />
         </button>
