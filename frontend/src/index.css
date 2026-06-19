@@ -4,36 +4,36 @@
 
 @layer base {
   :root {
-    /* Dark sports theme with vibrant green - football/soccer inspired */
-    --background: 140 20% 10%;       /* Deep dark green-black */
+    /* Professional dark blue-black sports theme */
+    --background: 220 13% 8%;        /* Deep blue-black */
     --foreground: 0 0% 98%;          /* Almost white */
 
-    --card: 140 18% 16%;             /* Slightly lighter dark green */
+    --card: 220 13% 14%;             /* Slightly lighter blue-black */
     --card-foreground: 0 0% 98%;
 
-    --primary: 142 72% 45%;          /* Vibrant sports green */
+    --primary: 142 72% 45%;          /* Vibrant green */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 160 45% 35%;        /* Deep secondary green */
+    --secondary: 220 40% 35%;        /* Deep blue */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 140 15% 28%;            /* Muted dark green */
+    --muted: 220 10% 28%;            /* Muted blue-gray */
     --muted-foreground: 0 0% 85%;
 
-    --accent: 47 95% 50%;            /* Golden accent for contrast */
-    --accent-foreground: 140 20% 10%;
+    --accent: 220 90% 55%;           /* Bright blue accent */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;        /* Red for warnings */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 142 72% 45%;          /* Match primary green */
+    --success: 142 72% 45%;
     --success-foreground: 0 0% 100%;
 
-    --indoor: 142 72% 45%;           /* Green for indoor */
-    --outdoor: 160 45% 35%;          /* Deeper green for outdoor */
+    --indoor: 142 72% 45%;
+    --outdoor: 220 40% 35%;
 
-    --border: 140 18% 22%;
-    --input: 140 18% 20%;
+    --border: 220 13% 20%;
+    --input: 220 13% 18%;
     --ring: 142 72% 45%;
 
     --radius: 0.75rem;
@@ -46,13 +46,9 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background-image: 
-      linear-gradient(135deg, rgba(22, 51, 28, 0.75) 0%, rgba(18, 40, 24, 0.78) 100%),
-      url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=2000&q=80');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #0f1419 100%);
     min-height: 100vh;
+    background-attachment: fixed;
   }
   h1, h2, h3, h4 {
     @apply font-display;
@@ -61,7 +57,7 @@
 
 @layer components {
   .card {
-    @apply rounded-xl border border-border/30 bg-card/80 backdrop-blur-sm text-card-foreground shadow-xl hover:shadow-2xl transition-all duration-300;
+    @apply rounded-xl border border-border/50 bg-card/70 backdrop-blur-xl text-card-foreground shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-primary/30;
   }
 
   .card-content {
@@ -69,7 +65,7 @@
   }
 
   .card-header {
-    @apply flex flex-col gap-1.5 mb-4 pb-4 border-b border-border/20;
+    @apply flex flex-col gap-1.5 mb-4 pb-4 border-b border-border/30;
   }
 
   .card-title {
@@ -101,7 +97,7 @@
   }
 
   .glass-effect {
-    @apply bg-card/50 backdrop-blur-md border border-border/20;
+    @apply bg-card/50 backdrop-blur-md border border-border/30;
   }
 
   .glow-green {
