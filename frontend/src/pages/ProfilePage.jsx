@@ -58,6 +58,9 @@ export default function ProfilePage() {
       setUser({ ...user, ...data.user });
       localStorage.setItem('user', JSON.stringify({ ...user, ...data.user }));
       toast.success('Profile updated.');
+      
+      const refreshed = await userApi.getProfile(user.id);
+      setUser(refreshed.user);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Could not update profile.');
     } finally {
@@ -86,6 +89,15 @@ export default function ProfilePage() {
     try {
       await userApi.setPreferredGames(preferredGames.map(({ game_id, skill_level }) => ({ game_id, skill_level })));
       toast.success('Preferred games saved.');
+      
+      const data = await userApi.getProfile(user.id);
+      const prefs = (data.user.preferredGames || []).map((g) => ({
+        game_id: g.id,
+        name: g.name,
+        category: g.category,
+        skill_level: g.UserGamePreference?.skill_level || 'beginner',
+      }));
+      setPreferredGames(prefs);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Could not save your games.');
     } finally {
@@ -110,6 +122,14 @@ export default function ProfilePage() {
     try {
       await userApi.setAvailability(availability);
       toast.success('Availability saved.');
+      
+      const data = await userApi.getProfile(user.id);
+      const avail = (data.user.availability || []).map((a) => ({
+        day_of_week: a.day_of_week,
+        start_time: a.start_time,
+        end_time: a.end_time,
+      }));
+      setAvailability(avail);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Could not save availability.');
     } finally {
