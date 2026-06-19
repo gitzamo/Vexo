@@ -7,6 +7,7 @@ import {
   History,
   LayoutDashboard,
   LogOut,
+  Users,
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
@@ -50,9 +51,7 @@ export default function AppShell() {
           type="button"
         >
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-              <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2M12 7C13.66 7 15 8.34 15 10V14H17V22H7V14H9V10C9 8.34 10.34 7 12 7Z" />
-            </svg>
+            <Users className="h-5 w-5" />
           </div>
           <span className="font-display text-xl font-bold tracking-tight">Vexo</span>
         </button>
@@ -118,9 +117,7 @@ export default function AppShell() {
           type="button"
         >
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
-              <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2M12 7C13.66 7 15 8.34 15 10V14H17V22H7V14H9V10C9 8.34 10.34 7 12 7Z" />
-            </svg>
+            <Users className="h-4 w-4" />
           </div>
           <span className="font-display text-lg font-bold">Vexo</span>
         </button>
