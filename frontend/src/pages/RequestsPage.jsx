@@ -89,10 +89,12 @@ export default function RequestsPage() {
   const handleRespond = async (id, status) => {
     try {
       await playRequestApi.respond(id, status);
-      toast.success(
-        status === 'accepted' ? 'Request accepted, see you on the court!' :
-        status === 'declined' ? 'Request declined.' : 'Request cancelled.'
-      );
+      const messages = {
+        accepted: 'Request accepted — see you on the court!',
+        declined: 'Request declined.',
+        cancelled: 'Request cancelled.',
+      };
+      toast.success(messages[status] || 'Request updated.');
       load();
     } catch (err) {
       toast.error(err.response?.data?.message || 'Could not update the request.');
