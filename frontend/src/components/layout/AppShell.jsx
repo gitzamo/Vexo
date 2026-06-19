@@ -7,7 +7,7 @@ import {
   History,
   LayoutDashboard,
   LogOut,
-  Users,
+  Zap,
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
@@ -51,7 +51,7 @@ export default function AppShell() {
           type="button"
         >
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md">
-            <Users className="h-5 w-5" />
+            <Zap className="h-5 w-5" />
           </div>
           <span className="font-display text-xl font-bold tracking-tight">Vexo</span>
         </button>
@@ -117,7 +117,7 @@ export default function AppShell() {
           type="button"
         >
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <Users className="h-4 w-4" />
+            <Zap className="h-4 w-4" />
           </div>
           <span className="font-display text-lg font-bold">Vexo</span>
         </button>
