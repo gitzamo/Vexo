@@ -21,7 +21,7 @@ export default function RegisterPage() {
     setSubmitting(true);
     try {
       await register(form);
-      toast.success('Welcome to Vexo! Let's set up your profile.');
+      toast.success('Welcome to Vexo! Lets set up your profile.');
       navigate('/profile');
     } catch (err) {
       toast.error(err.response?.data?.message || 'Could not create your account.');
