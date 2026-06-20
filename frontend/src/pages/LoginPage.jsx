@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Trophy } from 'lucide-react';
+import { Zap } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -32,12 +32,12 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="w-full max-w-sm">
-        <Link to="/" className="mb-8 flex flex-col items-center gap-2 hover:opacity-80 transition-opacity">
+        <div className="mb-8 flex flex-col items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-primary-foreground">
-            <Trophy className="h-5 w-5" />
+            <Zap className="h-5 w-5" />
           </div>
           <span className="font-display text-xl font-bold">Vexo</span>
-        </Link>
+        </div>
 
         <Card>
           <CardHeader>
